@@ -40,8 +40,8 @@
                 MinWidth="300"
                 SelectedValuePath="BusinessAssociateId"
                 DisplayMemberPath="Name1"
-                ItemsSource="{x:Bind ViewModel.BusinessAssociates}"
-                SelectedValue="{x:Bind ViewModel.SelectedOrder.BusinessAssociateId, Mode=TwoWay, Converter={StaticResource TypeConverter}}" />
+                ItemsSource="{Binding BusinessAssociates}"
+                SelectedValue="{Binding SelectedOrder.BusinessAssociateId, Mode=TwoWay}" />
             <DatePicker
                 Header="Delivery Date"
                 Margin="5"
