@@ -100,6 +100,8 @@
     <Compile Include="Converters\TransactionTypeConverter.cs" />
     <Compile Include="Miscellanous\Constants.cs" />
     <Compile Include="Models\BusinessAssociate.cs" />
+    <Compile Include="Models\ComboBoxItem.cs" />
+    <Compile Include="Models\ComboBoxItemCollection.cs" />
     <Compile Include="Models\HttpError.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\PageResult.cs" />

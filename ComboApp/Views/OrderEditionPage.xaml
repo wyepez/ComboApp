@@ -5,12 +5,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:myconverters="using:ComboApp.Converters"
+    xmlns:models="using:ComboApp.Models"
     xmlns:t10converters="using:Template10.Converters"
     mc:Ignorable="d">
 
     <Page.Resources>
         <t10converters:ChangeTypeConverter x:Key="TypeConverter" />
         <myconverters:DateTimeConverter x:Key="DateTimeConverter" />
+        <models:ComboBoxItemCollection x:Key="TransactionTypes">
+            <models:ComboBoxItem Value="I" Display="Incoming" />
+            <models:ComboBoxItem Value="O" Display="Outgoing" />
+            <models:ComboBoxItem Value="T" Display="Transfer" />
+        </models:ComboBoxItemCollection>
+        <models:ComboBoxItemCollection x:Key="OrderTypes">
+            <models:ComboBoxItem Value="M" Display="Manual" />
+            <models:ComboBoxItem Value="A" Display="Automatic" />
+            <models:ComboBoxItem Value="S" Display="Semi-automatic" />
+        </models:ComboBoxItemCollection>
     </Page.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -43,7 +54,7 @@
                 Margin="5"
                 SelectedValuePath="Value"
                 DisplayMemberPath="Display"
-                ItemsSource="{x:Bind ViewModel.TransactionTypes}"
+                ItemsSource="{StaticResource TransactionTypes}"
                 SelectedValue="{x:Bind ViewModel.SelectedOrder.TransactionType, Mode=TwoWay}" />
             <TextBox
                 Header="Priority"
@@ -57,7 +68,7 @@
                 MinWidth="200"
                 SelectedValuePath="Value"
                 DisplayMemberPath="Display"
-                ItemsSource="{x:Bind ViewModel.OrderTypes}"
+                ItemsSource="{StaticResource OrderTypes}"
                 SelectedValue="{x:Bind ViewModel.SelectedOrder.OrderType, Mode=TwoWay}" />
             <TextBox
                 Header="Information"
